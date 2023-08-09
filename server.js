@@ -1,8 +1,6 @@
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
 
-const PORT = process.env.PORT || 3001;
-
 const db = mysql.createConnection(
   {
 
@@ -72,17 +70,17 @@ function addDepartment() {
   });
 };
 function addEmployee() {
-  db.query('SELECT * FROM department', function (err, results) {
+  db.query('SELECT * FROM employee', function (err, results) {
     console.log(results);
   });
 };
 function addRole() {
-  db.query('SELECT * FROM department', function (err, results) {
+  db.query('SELECT * FROM role', function (err, results) {
     console.log(results);
   });
 };
 function updateEmployee() {
-  db.query('SELECT * FROM department', function (err, results) {
+  db.query('SELECT * FROM employee', function (err, results) {
     console.log(results);
   });
 };
