@@ -24,7 +24,7 @@ function init() {
       message: "What would you like to do?",
       name: "choice",
       choices: ["View Departments", "View Employees", "View Roles", "Add Department",
-        "Add Employee", "Add Role", "Update Employee"]
+                "Add Employee", "Add Role", "Update Employee"]
     },
   ])
     .then((answers) => {
@@ -63,6 +63,26 @@ function viewEmployees() {
 };
 function viewRoles() {
   db.query('SELECT * FROM role', function (err, results) {
+    console.log(results);
+  });
+};
+function addDepartment() {
+  db.query('SELECT * FROM department', function (err, results) {
+    console.log(results);
+  });
+};
+function addEmployee() {
+  db.query('SELECT * FROM department', function (err, results) {
+    console.log(results);
+  });
+};
+function addRole() {
+  db.query('SELECT * FROM department', function (err, results) {
+    console.log(results);
+  });
+};
+function updateEmployee() {
+  db.query('SELECT * FROM department', function (err, results) {
     console.log(results);
   });
 };
