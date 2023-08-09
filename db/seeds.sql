@@ -3,3 +3,6 @@ VALUES ("?"),
 
 INSERT INTO role (role_id, ?)
 VALUES (?, "?"),
+
+INSERT INTO department ()
+VALUES (?, "?"),
