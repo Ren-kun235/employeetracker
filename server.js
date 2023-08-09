@@ -1,13 +1,21 @@
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
 
+require("dotenv").config();
+
+const dbUser = process.env.USER;
+const dbPassword = process.env.PASSWORD;
+const dbName = process.env.DATABASE;
+
 const db = mysql.createConnection(
+
   {
 
-    host: 'localhost',
-    user: 'root',
-    password: 'Passionate651!',
-    database: 'employee_db'
+    host: "localhost",
+    port: 3001,
+    user: dbUser,
+    password: dbPassword,
+    database: dbName
 
   },
 
@@ -16,7 +24,9 @@ const db = mysql.createConnection(
 );
 
 function init() {
+
   inquirer.prompt([
+
     {
       type: "list",
       message: "What would you like to do?",
@@ -24,25 +34,44 @@ function init() {
       choices: ["View Departments", "View Employees", "View Roles", "Add Department",
                 "Add Employee", "Add Role", "Update Employee"]
     },
+
   ])
+
     .then((answers) => {
+
       console.log(answers.choice)
       if (answers.choice === "View Departments") {
+
         viewDepartments()
+
       } else if (answers.choice === "View Employees") {
+
         viewEmployees()
+
       } else if (answers.choice === "View Roles") {
+
         viewRoles()
+
       } else if (answers.choice === "Add Department") {
+
         addDepartment()
+
       } else if (answers.choice === "Add Employee") {
+
         addEmployee()
+
       } else if (answers.choice === "Add Role") {
+
         addRole()
+
       } else if (answers.choice === "Update Employee") {
+
         updateEmployee()
+
       } else {
+
         console.log("Please choose an option!")
+        
       };
 
     });
