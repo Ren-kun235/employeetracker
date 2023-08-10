@@ -6,13 +6,13 @@ VALUES  (1, "R&D"),
         
 
 INSERT INTO role ( id, title, salary, department_id )
-        (1, "Junior Technician", 30000, 1),
+VALUES  (1, "Junior Technician", 30000, 1),
         (2, "Senior Technician", 60000, 1),
         (3, "Sales Lead", 80000, 2),
         (4, "Sales Representative", 50000, 2),
         (5, "Deliveries Coordinator", 45000, 3),
         (6, "Returns Inspection", 40000, 3),
-VALUES  (7, "Materials Handler", 35000, 4),
+        (7, "Materials Handler", 35000, 4),
         (8, "Shipping Coordinator", 45000, 4),
 
 
